@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  isdb_cw-db:
+    environment:
+      POSTGRES_USER: nullnumber1
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: anathomical_park
+    image: postgres
+    ports:
+      - "5432:5432"
