@@ -24,7 +24,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 /* move user to specified coordinate */
-CREATE FUNCTION update_user_coordinate(user_id_param int, coordinate_x_param int, coordinate_y_param int)
+CREATE OR REPLACE FUNCTION update_user_coordinate(user_id_param int, coordinate_x_param int, coordinate_y_param int)
     RETURNS VOID AS
 $$
 DECLARE
@@ -53,7 +53,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 /* move disease to specified coordinate */
-CREATE FUNCTION update_disease_coordinate(disease_id_param int, coordinate_x_param int, coordinate_y_param int)
+CREATE OR REPLACE FUNCTION update_disease_coordinate(disease_id_param int, coordinate_x_param int, coordinate_y_param int)
     RETURNS VOID AS
 $$
 DECLARE

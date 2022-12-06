@@ -1,1 +1,2 @@
 truncate table users, control_markers, game_field, user_cards, effect, response_dump, square_dump;
+drop index cards_id, response_id, character_id, disease_id, action_id, condition_id, square_shape_name, square_object_name;

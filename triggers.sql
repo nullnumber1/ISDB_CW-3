@@ -12,7 +12,7 @@ begin
 end;
 $$ language plpgsql;
 
-create trigger check_playing_cards
+create or replace trigger check_playing_cards
     after insert
     on user_cards
     for each row
@@ -30,7 +30,7 @@ end;
 $$
     language plpgsql;
 
-create trigger one_card_per_coordinate
+create or replace trigger one_card_per_coordinate
     before insert
     on game_field
     for each row
@@ -50,7 +50,7 @@ begin
 end;
 $$ language plpgsql;
 
-create trigger check_user_count
+create or replace trigger check_user_count
     after insert
     on users
     for each row
@@ -96,7 +96,7 @@ begin
 end;
 $$ language plpgsql;
 
-create trigger check_cards_table
+create or replace trigger check_cards_table
     after insert
     on user_cards
     for each row
@@ -108,7 +108,7 @@ create trigger check_field_table
     for each row
 execute procedure check_cards_dump();
 
-create trigger check_dump_table
+create or replace trigger check_dump_table
     after insert
     on square_dump
     for each row
@@ -135,13 +135,13 @@ begin
 end;
 $$ language plpgsql;
 
-create trigger check_response_table
+create or replace trigger check_response_table
     after insert
     on response_dump
     for each row
 execute procedure check_effect();
 
-create trigger check_effect_table
+create or replace trigger check_effect_table
     after insert
     on effect
     for each row
